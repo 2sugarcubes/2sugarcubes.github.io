@@ -54,3 +54,29 @@
 		/* --rp-highlight-high: #56526e; */
 	}
 }
+
+/* Setup basic HTML elements */
+h1 {
+  color: var(--rp-love);
+}
+
+h2 {
+  color: var(--rp-gold);
+}
+
+h3 {
+  color: var(--rp-rose);
+}
+
+body {
+  color: var(--rp-text);
+  background: var(--rp-base);
+}
+
+a {
+  color: var(--rp-pine)
+}
+
+a:visited {
+  color: var(--rp-iris)
+}
