@@ -55,7 +55,17 @@
   }
 }
 
+/* color bootstrp */
+
 /* Setup basic HTML elements */
+header {
+  color: var(--rp-gold);
+  background-color: var(--rp-muted);
+  text: bold;
+  text-align: center;
+  font-size: 32pt;
+}
+
 h1 {
   color: var(--rp-love);
 }
