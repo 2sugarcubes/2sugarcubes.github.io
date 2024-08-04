@@ -1,1 +1,12 @@
-include: [.css, .js]
+keep_files: [assets]
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-sass-converter
+  - jekyll-relative-links
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM

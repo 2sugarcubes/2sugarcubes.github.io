@@ -1,2 +1,2 @@
 make:
-	bundle exec jekyll serve --livereload --open-url --drafts --future --incremental
+	bundle exec jekyll serve --livereload --open-url --drafts --future --incremental --baseurl=""

@@ -31,7 +31,7 @@ html, body
         transform: translate(0, 0) rotate(0deg)
 
   & ~ #nav-content
-    .nav-button
+    a.nav-button
       span
         opacity: 0
         transition: opacity .1s
@@ -51,7 +51,7 @@ html, body
       pointer-events: none
 
 #nav-bar
-  position: absolute
+  position: fixed
   left: 1vw
   top: 1vw
   height: calc(100% - 2vw)
@@ -71,10 +71,6 @@ html, body
     width: calc(100% - 32px)
     border: none
     border-top: solid 1px var(--rp-surface)
-
-  a
-    color: inherit
-    text-decoration: inherit
   
   input[type="checkbox"]
     display: none
@@ -181,7 +177,7 @@ label[for="nav-toggle"]
     top: 100%
     box-shadow: 16px -16px var(--rp-base)
 
-.nav-button
+a.nav-button
   position: relative
   margin-left: 16px
   height: 54px
@@ -199,12 +195,13 @@ label[for="nav-toggle"]
   .fas
     transition: min-width .2s
 
-  @for $i from 1 through 8
+  @for $i from 1 through 16
     &:nth-of-type(#{$i}):hover
-      color: var(--rp-overlay)
+      color: var(--rp-subtle)
+      /*background-color: var(--rp-base)*/
 
       & ~ #nav-content-highlight
-        top: ($i - 1) * 54 + 16px
+        top: ($i - 1) * 54px + 16px
 
 #nav-bar .fas
   min-width: 3rem

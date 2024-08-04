@@ -19,7 +19,7 @@
 
   /* spacing */
   --navbar-width: 256px;
-  --navbar-width-min: 80px;
+  --navbar-width-min: 60px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -134,7 +134,7 @@
   font-style: Normal;
 }
 
-:is(div, p, span, body) {
+:is(div, p, body) {
   font-family: "Urbanist", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -159,6 +159,18 @@ code {
 }
 
 /* Set up color schemes for basic HTML elements */
+body {
+  background: linear-gradient(
+    to bottom,
+    rgba(3, 75, 82, 1) 0%,
+    rgba(3, 75, 82, 0) 100%
+  );
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 header {
   color: var(--rp-gold);
   background-color: var(--rp-muted);
@@ -181,7 +193,7 @@ h3 {
 
 body {
   color: var(--rp-text);
-  background-color: var(--rp-base);
+  /*background-color: var(--rp-base);*/
 }
 
 a {
@@ -215,9 +227,29 @@ aside {
 article {
   margin: 0 auto;
 }
-thead {
+aside > thead {
   font-weight: 700;
   font-size: 32pt;
+}
+
+td {
+  padding: 10px 10px 0 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+pre.highlight {
+  padding: 15px;
+}
+
+:is(pre.highlight, div.highlight) {
+  border-radius: 33px;
+  background: var(--rp-overlay);
+  box-shadow:
+    inset 34px 34px 67px #201d30,
+    inset -34px -34px 67px #2c2944;
 }
 
 /* Class definitions */
