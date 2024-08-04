@@ -1,0 +1,243 @@
+/* define variables */
+:root {
+  /* Rosé Pine Dawn */
+  --rp-base: #faf4ed;
+  --rp-surface: #fffaf3;
+  --rp-overlay: #f2e9e1;
+  --rp-muted: #9893a5;
+  --rp-subtle: #797593;
+  --rp-text: #575279;
+  --rp-love: #b4637a;
+  --rp-gold: #ea9d34;
+  --rp-rose: #d7827e;
+  --rp-pine: #286983;
+  --rp-foam: #56949f;
+  --rp-iris: #907aa9;
+  --rp-highlight-low: #f4ede8;
+  --rp-highlight-med: #dfdad9;
+  --rp-highlight-high: #cecacd;
+
+  /* spacing */
+  --navbar-width: 256px;
+  --navbar-width-min: 80px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Rosé Pine */
+    --rp-base: #191724;
+    --rp-surface: #1f1d2e;
+    --rp-overlay: #26233a;
+    --rp-muted: #6e6a86;
+    --rp-subtle: #908caa;
+    --rp-text: #e0def4;
+    --rp-love: #eb6f92;
+    --rp-gold: #f6c177;
+    --rp-rose: #ebbcba;
+    --rp-pine: #31748f;
+    --rp-foam: #9ccfd8;
+    --rp-iris: #c4a7e7;
+    --rp-highlight-low: #21202e;
+    --rp-highlight-med: #403d52;
+    --rp-highlight-high: #524f67;
+
+    /* Rosé Pine Moon */
+    /* --rp-base: #232136; */
+    /* --rp-surface: #2a273f; */
+    /* --rp-overlay: #393552; */
+    /* --rp-muted: #6e6a86; */
+    /* --rp-subtle: #908caa; */
+    /* --rp-text: #e0def4; */
+    /* --rp-love: #eb6f92; */
+    /* --rp-gold: #f6c177; */
+    /* --rp-rose: #ea9a97; */
+    /* --rp-pine: #3e8fb0; */
+    /* --rp-foam: #9ccfd8; */
+    /* --rp-iris: #c4a7e7; */
+    /* --rp-highlight-low: #2a283e; */
+    /* --rp-highlight-med: #44415a; */
+    /* --rp-highlight-high: #56526e; */
+  }
+}
+/* Define fonts */
+.fira-code-light {
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.fira-code-normal {
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.fira-code-bold {
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.bona-nova-sc-regular {
+  font-family: "Bona Nova SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bona-nova-sc-bold {
+  font-family: "Bona Nova SC", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.bona-nova-sc-regular-italic {
+  font-family: "Bona Nova SC", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.urbanist-regular {
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.urbanist-bold {
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.urbanist-light {
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Apply fonts */
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: "Bonta Nova SC", serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.2em;
+  letter-spacing: -0.02em;
+}
+
+:is(h3, h4, h5, h6) {
+  font-weight: 400;
+  font-style: Normal;
+}
+
+:is(div, p, span, body) {
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5em;
+}
+
+article {
+  width: min(100%, 45em);
+}
+
+:is(button, input, textarea) {
+  font-family: "Fira Code", "Courier New", Courier, monospace;
+  font-weight: 500;
+  font-style: normal;
+}
+
+code {
+  font-family: "Fira Code", "Courier New", Courier, monospace;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Set up color schemes for basic HTML elements */
+header {
+  color: var(--rp-gold);
+  background-color: var(--rp-muted);
+  text: bold;
+  text-align: center;
+  font-size: 32pt;
+}
+
+h1 {
+  color: var(--rp-love);
+}
+
+h2 {
+  color: var(--rp-gold);
+}
+
+h3 {
+  color: var(--rp-rose);
+}
+
+body {
+  color: var(--rp-text);
+  background-color: var(--rp-base);
+}
+
+a {
+  color: var(--rp-pine);
+}
+
+a:visited {
+  color: var(--rp-iris);
+}
+
+/* Set floats/spacing */
+
+main {
+  margin: 0 auto;
+}
+
+nav {
+  position: fixed;
+}
+
+aside {
+  float: right;
+  padding: 10px;
+  margin: 0 10% 0 0;
+  width: max(15%, 100px);
+  outline: 2px;
+  outline-style: solid;
+  outline-color: var(--rp-love);
+}
+
+article {
+  margin: 0 auto;
+}
+thead {
+  font-weight: 700;
+  font-size: 32pt;
+}
+
+/* Class definitions */
+
+div.content {
+  width: 720px;
+}
+
+div.page-nav {
+  position: -webkit-sticky;
+  position: sticky;
+  width: 20%;
+}
+
+button.tag {
+  background: var(--rp-rose);
+  color: var(--rp-overlay);
+  border: none;
+  border-radius: 13px;
+  height: 26px;
+  font-size: 10pt;
+  padding: 5px 10px;
+}
