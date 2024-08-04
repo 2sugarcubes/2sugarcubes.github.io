@@ -156,6 +156,8 @@ code {
   font-family: "Fira Code", "Courier New", Courier, monospace;
   font-weight: 500;
   font-style: normal;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* Set up color schemes for basic HTML elements */
@@ -241,15 +243,17 @@ dt {
 }
 
 pre.highlight {
-  padding: 15px;
+  padding: 5px 0px 5px 15px;
 }
 
-:is(pre.highlight, div.highlight) {
+div.highlight {
   border-radius: 33px;
   background: var(--rp-overlay);
   box-shadow:
     inset 34px 34px 67px #201d30,
     inset -34px -34px 67px #2c2944;
+  overflow-y: auto;
+  overflow-x: scroll;
 }
 
 /* Class definitions */

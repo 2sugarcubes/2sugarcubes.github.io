@@ -1,8 +1,5 @@
 /* from https://raw.githubusercontent.com/mojombo/tpw/master/css/syntax.css */
 
-.highlight {
-  background: var(--rp-highlight-med);
-}
 .highlight .c {
   color: var(--rp-pine);
   font-style: italic;
