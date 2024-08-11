@@ -127,6 +127,7 @@
   font-style: normal;
   line-height: 1.2em;
   letter-spacing: -0.02em;
+  margin: 1.2em 0 0.6em 0;
 }
 
 :is(h3, h4, h5, h6) {
@@ -242,6 +243,36 @@ dt {
   font-weight: bold;
 }
 
+footer {
+  margin: 0 auto;
+  color: var(--rp-muted);
+  background-color: var(--rp-overlay);
+  display: block;
+  clear: both;
+}
+
+footer > *:first-child {
+  padding-left: clamp(10px, 15%, 150px);
+}
+
+/* Class definitions */
+
+.card {
+  margin: auto;
+  width: 50%;
+  padding: 45px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background-color: rgba(20, 22, 26, 0.2);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.card > h1 {
+  font-size: 70pt;
+  padding-bottom: 20px;
+}
+
 pre.highlight {
   padding: 5px 0px 5px 15px;
 }
@@ -255,8 +286,6 @@ div.highlight {
   overflow-y: auto;
   overflow-x: scroll;
 }
-
-/* Class definitions */
 
 div.content {
   width: 720px;
@@ -276,4 +305,8 @@ button.tag {
   height: 26px;
   font-size: 10pt;
   padding: 5px 10px;
+}
+
+img.license {
+  height: 1em;
 }
