@@ -1,15 +1,8 @@
-<script
-  src="https://code.jquery.com/jquery-3.3.0.min.js"
-  integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4="
-  crossorigin="anonymous"
-></script>
-<script src="js/nav.js"></script>
-<link rel="stylesheet" type="stylesheet" href="css/sidebar.css" defer />
+<script src="{{ js/nav.js | relative_url }}" defer></script>
 <div id="nav-bar">
   <input id="nav-toggle" type="checkbox" />
   <div id="nav-header">
-    <a id="nav-title" href="/" target="_blank"
-      ><i class="fas fa-home"></i>The Horse's Head</a
+    <a id="nav-title" href="/"><i class="fas fa-home"></i>The Horse's Head</a
     ><label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
     <hr />
   </div>
@@ -26,13 +19,11 @@
     <hr />
     <div id="nav-content-highlight"></div>
   </div>
-  <input id="nav-footer-toggle" type="checkbox" />
+  <input id="nav-footer-toggle" type="checkbox" checked="checked" />
   <div id="nav-footer">
     <div id="nav-footer-heading">
       <div id="nav-footer-avatar">
-        <img
-          src="https://gravatar.com/avatar/4474ca42d303761c2901fa819c4f2547"
-        />
+        <img src='{{ "assets/profile-picture.webp" | relative_url }}' />
       </div>
       <div id="nav-footer-titlebox">
         <a
@@ -44,6 +35,6 @@
       </div>
       <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
     </div>
-    <div id="nav-footer-content">Programer and novice world-builder.</div>
+    <div id="nav-footer-content">{% include footer.html %}</div>
   </div>
 </div>
