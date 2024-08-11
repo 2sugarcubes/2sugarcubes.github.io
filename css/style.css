@@ -221,10 +221,22 @@ aside {
   float: right;
   padding: 10px;
   margin: 0 10% 0 0;
-  width: max(15%, 100px);
   outline: 2px;
   outline-style: solid;
   outline-color: var(--rp-love);
+}
+hgroup {
+  color: var(--rp-subtle);
+  margin-bottom: 16px;
+}
+
+hgroup > p {
+  color: var(--rp-subtle);
+  margin: 0px;
+}
+
+hgroup > :is(h1, h2, h3, h4, h5, h6) {
+  margin-bottom: 0px;
 }
 
 article {
@@ -298,15 +310,29 @@ div.page-nav {
 }
 
 button.tag {
-  background: var(--rp-rose);
+  background: var(--rp-love);
   color: var(--rp-overlay);
   border: none;
   border-radius: 13px;
   height: 26px;
   font-size: 10pt;
   padding: 5px 10px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 img.license {
   height: 1em;
+}
+
+.row {
+  display: flex;
+}
+
+.col {
+  flex: 50%;
+}
+
+div.pill {
+  display: none;
 }
