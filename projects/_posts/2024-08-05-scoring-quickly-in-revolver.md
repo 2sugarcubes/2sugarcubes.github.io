@@ -3,11 +3,9 @@ title: The Scoring logic of Revolver
 catagory: projects revolver
 authour: Lucy
 tags: machine-learning algorithms
+pre-text: Before I start, I would highly recommend reading [this article](https://cowboyprogramming.com/2007/01/04/programming-poker-ai/) by Mick West. It was invaluable in getting me on the right track with this project back in high-school.
+layout: post
 ---
-
-# The Scoring logic of Revolver
-
-Before I start, I would highly recommend reading [this article](https://cowboyprogramming.com/2007/01/04/programming-poker-ai/) by Mick West. It was invaluable in getting me on the right track with this project back in high-school.
 
 Creating a poker playing machine must first start with scoring poker hands. After all what good is a player if they think the winner is randomly determined.
 
