@@ -177,9 +177,11 @@ body {
 header {
   color: var(--rp-gold);
   background-color: var(--rp-muted);
-  text: bold;
+  font-weight: bold;
+  font-family: "Fira Code", "Courier New", Courier, monospace;
   text-align: center;
   font-size: 32pt;
+  padding: 15px;
 }
 
 h1 {
