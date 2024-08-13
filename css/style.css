@@ -59,6 +59,13 @@
     /* --rp-highlight-high: #56526e; */
   }
 }
+
+@media (max-width: 1000px) {
+  :root {
+    --navbar-width: calc(100% - 1vw);
+    --navbar-width-min: 60px;
+  }
+}
 /* Define fonts */
 .fira-code-light {
   font-family: "Fira Code", monospace;
