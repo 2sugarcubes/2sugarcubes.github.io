@@ -5,24 +5,13 @@
 <html lang="en">
   <head>
     {% include html_head.html %}
-    <!--<meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Magnussonl's Page</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Fira+Code:wght@300..700&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/sidebar.css" /> -->
   </head>
   <body>
     <header>
       2 Sugar Cubes
       <img src="assets/button.webp" alt="2 Sugar Cubes button" />
     </header>
+    {% include sidebar.html %}
     <main>
       <aside>
         <table role="presentation">
@@ -35,10 +24,6 @@
               Lucy/<wbr />mani&nbsp;lusi/<wbr />Luke<!--/I will probably answer to any name starting
               with an 'L'-->
             </td>
-          </tr>
-          <tr>
-            <td>Professional/In person Name</td>
-            <td>Luke</td>
           </tr>
           <tr>
             <td>Pronouns</td>
@@ -68,19 +53,22 @@
           hubristic projects.
         </p>
         <h2>Posts:</h2>
+
+        {% for cat in site.categories %}
+        <h3><a href="/{{cat | first }}">{{ cat | first }}</a>:</h3>
         <ul>
-          {% for post in site.posts %}
+          {% for post in cat.last %}
           <li>
+            <time datetime="{{ post.date }}"
+              >{{ post.date | date_to_string }}</time
+            >
             <a href="{{ post.url }}">{{ post.title }}</a>
             {{ post.excerpt }}
           </li>
           {% endfor %}
         </ul>
+        {% endfor %}
       </article>
     </main>
-    <script
-      src="https://kit.fontawesome.com/75ef340044.js"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
