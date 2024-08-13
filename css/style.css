@@ -229,11 +229,22 @@ nav {
 aside {
   float: right;
   padding: 10px;
-  margin: 0 10% 0 0;
+  margin-right: max(10px, 2vw);
   outline: 2px;
   outline-style: solid;
   outline-color: var(--rp-love);
 }
+
+@media (max-width: 900px) {
+  main {
+    margin: 2%;
+  }
+  aside {
+    float: none;
+    margin: 2%;
+  }
+}
+
 hgroup {
   color: var(--rp-subtle);
   margin-bottom: 16px;
