@@ -16,27 +16,15 @@ $(function () {
   $("h1, h2, h3").each(function () {
     $(
       '<a class="nav-button" href="#' +
-        $(this)
-          .text()
-          .toLowerCase()
-          .replace(/ /g, "-")
-          .replace(/[^\w-]+/g, "") +
-        '"><i class="fas"></i><span>' +
+        $(this).attr("id") +
+        '"><i class="fas fa-header"></i><span>' +
         $(this).text() +
         "</span></a>",
     ).insertBefore("#nav-content-highlight");
-    $(this).attr(
-      "id",
-      $(this)
-        .text()
-        .toLowerCase()
-        .replace(/ /g, "-")
-        .replace(/[^\w-]+/g, ""),
-    );
   });
 
   $("div ").on("click", "a", function (event) {
-    var position = $($(this).attr("href")).offset().top - 190;
+    var position = $($(this).attr("href")).offset().top - 40;
     $("html, body").animate({ scrollTop: position }, 400);
     $("nav ul li a").parent().removeClass("active");
     $(this).parent().addClass("active");
