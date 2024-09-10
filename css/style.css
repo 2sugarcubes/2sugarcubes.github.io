@@ -267,6 +267,14 @@ aside > thead {
   font-size: 32pt;
 }
 
+table,
+th,
+td {
+  border: 1px solid;
+  border-color: var(--rp-muted);
+  border-collapse: collapse;
+}
+
 td {
   padding: 10px 10px 0 0;
 }
