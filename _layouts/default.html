@@ -8,6 +8,12 @@
   </head>
   <body>
     {% include sidebar.html %}
-    <article>{{ content }}</article>
+    <article>
+      {% capture anchor_body %}
+      <i class="fa fa-link" aria-hidden="true"></i>
+      {% endcapture %} {% include anchor_headings.html html=content
+      anchorAttrs='aria-label="Permalink to %heading%"' anchorBody=anchor_body
+      %}
+    </article>
   </body>
 </html>
