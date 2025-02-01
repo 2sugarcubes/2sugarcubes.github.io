@@ -1,6 +1,3 @@
-[submodule "astro"]
-	path = .astrolabe
-	url = https://github.com/2sugarcubes/astrolabe
 [submodule "astrolabe"]
-	path = .astrolabe
+	path = _astrolabe
 	url = https://github.com/2sugarcubes/astrolabe
