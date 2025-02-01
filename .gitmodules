@@ -1,0 +1,3 @@
+[submodule "astrolabe"]
+	path = _astrolabe
+	url = https://github.com/2sugarcubes/astrolabe
