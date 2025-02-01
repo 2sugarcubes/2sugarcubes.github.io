@@ -6,7 +6,7 @@ plugins:
   - jekyll-sass-converter
   - jekyll-relative-links
 
-repository: https://github.com/2sugarcubes/2sugarcubes.github.io
+repository: 2sugarcubes/2sugarcubes.github.io
 
 markdown: kramdown
 highlighter: rouge
