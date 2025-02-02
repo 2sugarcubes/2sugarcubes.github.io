@@ -1,3 +1,4 @@
 [submodule "_astrograph"]
 	path = _astrograph
 	url = https://github.com/2sugarcubes/astrograph
+  branch = master
