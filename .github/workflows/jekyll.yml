@@ -42,7 +42,7 @@ jobs:
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - uses: jetli/wasm-pack-action@v0.4.0
       - name: Pack Astrolabe
-        run: wasm-pack build --release --target web -d ../../js/astro --out-name main _astrolabe/wasm
+        run: wasm-pack build --release --target web -d ../../js/astro --out-name main _astrograph/wasm
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
