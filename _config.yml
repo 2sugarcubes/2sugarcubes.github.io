@@ -13,6 +13,7 @@ exclude:
   - docker-compose.yml
   - makefile
   - readme.md
+  - js/astro/README.md
 
 markdown: kramdown
 highlighter: rouge
