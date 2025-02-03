@@ -8,6 +8,12 @@ plugins:
 
 repository: 2sugarcubes/2sugarcubes.github.io
 
+exclude:
+  - Dockerfile
+  - docker-compose.yml
+  - makefile
+  - readme.md
+
 markdown: kramdown
 highlighter: rouge
 kramdown:
