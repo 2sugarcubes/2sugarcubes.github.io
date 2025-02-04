@@ -9,6 +9,7 @@ plugins:
 repository: 2sugarcubes/2sugarcubes.github.io
 
 exclude:
+  - vendor
   - Dockerfile
   - docker-compose.yml
   - makefile
