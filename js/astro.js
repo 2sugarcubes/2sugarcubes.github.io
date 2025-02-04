@@ -2,7 +2,7 @@ import init, {
   //initThreadPool,
   generate_observations_from_json,
   generate_universe,
-} from "./astro/main.js";
+} from "./astro/astrograph_wasm.js";
 
 async function loadJsonFile(url, callback) {
   fetch(url)
