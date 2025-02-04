@@ -11,15 +11,19 @@ The static site builder that this website is built on.
 
 ## [Rose Pine](https://rosepinetheme.com/)
 
-The color scheme I have shamelessly used for everything from [my text editor](#neo-vim-and-lazy-nvim), to my console, to this website.
+The color scheme I have shamelessly used for everything from [my text editor](#neo-vim-and-lazy-nvim),
+to my console, to this website.
 
-## [Psychcool](https://psychcool.org/)
+## [Psychcool](https://psychcool.org/) ([wayback machine](https://web.archive.org/web/20241009124621/https://psychcool.org/))
 
-If it wasn't for [this video](https://piped.video/watch?v=zswyWBtF-7Y) I never would have gone and made this whole thing.
+If it wasn't for [this video](https://piped.video/watch?v=zswyWBtF-7Y) ([reupload](https://piped.video/watch?v=dBu4GD-Ib5M))
+I never would have gone and made this whole thing. I hope they are doing well,
+and return if and when they are ready.
 
 ## [Neo vim](https://github.com/neovim/neovim) and [lazy nvim](https://github.com/folke/lazy.nvim)
 
-My text editor of choice after using VS code and Visual Studio for several years and getting tired of the bloat.
+My text editor of choice after using VS code and Visual Studio for several
+years and getting tired of the bloat.
 
 # Cool sites out there
 
@@ -37,11 +41,13 @@ My text editor of choice after using VS code and Visual Studio for several years
 
 [feed](http://rss.acast.com/themagnusarchives)
 
-The Magnus Archives needs to be heard to be believed. The Scariest podcast I have ever heard.
+The Magnus Archives needs to be heard to be believed.
+The Scariest podcast I have ever heard.
 
-p.s. don't believe the lies, you _need_ to listen to Archives before you listen to Protocol.
+p.s. don't believe the lies, you _need_ to listen to
+Archives before you listen to Protocol.
 
-## [Knowlege Fight](https://knowledgefight.com/)
+## [Knowledge Fight](https://knowledgefight.com/)
 
 [feed](http://feeds.libsyn.com/92106/rss)
 
@@ -57,7 +63,9 @@ A lighter take on the news and current events podcast genre. Might I recommend [
 
 ## [Azgaar's Fantasy Map Generator](https://azgaar.github.io/Fantasy-Map-Generator/)
 
-This is an incredible map generator that is absurdly feature rich and developed at a rate that I can only dream of competing with. It is a bit heavy weight for most computers, but it is worth a look.
+This is an incredible map generator that is absurdly feature rich and developed
+at a rate that I can only dream of competing with. It is a bit heavy weight for
+most computers, but it is worth a look.
 
 <div style="text-align:right">
 <a href="https://cd5k.net/tau/">&tau;</a>
