@@ -40,15 +40,14 @@ jobs:
           ruby-version: "3.3" # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
-      - uses: jetli/wasm-pack-action@v0.4.0
       - name: Get Astrolabe
-        run: wget -qO- wget -qO- https://github.com/2sugarcubes/astrograph/releases/download/v0.1.0/wasm.tar.gz | tar xvz -C js/astro/ --overwrite --strip-components 2
+        run: mkdir -p js/astro && wget -qO- wget -qO- https://github.com/2sugarcubes/astrograph/releases/download/v0.1.0/wasm.tar.gz | tar xvz -C js/astro/ --overwrite --strip-components 2
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build --incremental --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: bundle install && bundle exec jekyll build --incremental --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
