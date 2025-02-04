@@ -33,8 +33,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Checkout submodules
-        run: git submodule update --init --recursive
       - name: Setup Ruby
         # https://github.com/ruby/setup-ruby/releases/tag/v1.207.0
         uses: ruby/setup-ruby@4a9ddd6f338a97768b8006bf671dfbad383215f4
@@ -43,8 +41,9 @@ jobs:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - uses: jetli/wasm-pack-action@v0.4.0
-      - name: Pack Astrolabe
-        run: wasm-pack build --release --target web -d ../../js/astro --out-name main _astrograph/wasm
+      - name: Get Astrolabe
+        run: wget -qO- wget -qO- https://github.com/2sugarcubes/astrograph/releases/download/v0.1.0/wasm.tar.gz |
+		        tar xvz -C js/astro/ --overwrite --strip-components 2
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
