@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en_au">
+  <head>
+    {% include html_head.html %}
+    <link rel="stylesheet" href="/css/toki-pona.css" />
+  </head>
+
+  <body>
+    {% include sidebar.html %}
+    <main lang="tok">
+      <aside style="display: flex; justify-content: center">
+        <label for="toki-pona-taso">toki pona taso</label>
+        <input type="checkbox" id="toki-pona-taso" value="" />
+        <input type="checkbox" id="sitelen-pona" value="" />
+        <label for="sitelen-pona">sitelen pona</label>
+      </aside>
+      <article>
+        <hgroup>
+          <h1>{{ page.title }}</h1>
+          {% if page.pre-text %} {{ page.pre-text | markdownify }} {% endif %}
+        </hgroup>
+        {% capture anchor_body %}
+        <i class="fa fa-link" aria-hidden="true"></i>
+        {% endcapture %} {% include anchor_headings.html html=content
+        anchorBody=anchor_body anchorAttrs='aria-label="Permalink to %heading%"'
+        %}
+      </article>
+    </main>
+  </body>
+</html>
