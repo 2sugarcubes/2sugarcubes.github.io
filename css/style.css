@@ -20,6 +20,8 @@
   /* spacing */
   --navbar-width: 256px;
   --navbar-width-min: 60px;
+
+  --mobile-width: 860px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -184,7 +186,10 @@ header {
   font-family: "Fira Code", "Courier New", Courier, monospace;
   text-align: center;
   font-size: 32pt;
-  padding: 15px;
+  min-height: 100px;
+  align-content: center;
+  line-height: 48px;
+  min-width: 130px;
 }
 
 h1 {
@@ -231,7 +236,7 @@ aside {
   outline-color: var(--rp-love);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 860px) {
   main {
     margin: 2%;
   }

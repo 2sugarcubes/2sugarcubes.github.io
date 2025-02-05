@@ -8,8 +8,15 @@ html, body
 #nav-bar
   height: 95vh
 
+@media(max-width: 860px)
+  body:not(:has(header))
+    margin-top: 100px
+  header
+    padding-left: 100px
+    padding-right: 100px
+
 #nav-toggle:checked
-  @media(max-width: 750px)
+  @media(max-width: 860px)
     & ~ #nav-content
       display: none
 
