@@ -362,6 +362,77 @@ img.license {
   flex: 50%;
 }
 
+/* Make multicolumn layouts inline when on mobile */
+@media (max-width: 550px) {
+  .row {
+    display: block;
+  }
+
+  #display {
+    padding: 0px;
+  }
+}
+
+#display {
+  aspect-ratio: 1;
+}
+
+#slides {
+  min-width: 100%;
+}
+
 div.pill {
+  display: none;
+}
+
+/* Make display multilines have some extra room */
+.col:has(+ #display) {
+  flex: 25%;
+}
+
+.row > .col + #display {
+  flex: 75%;
+  padding: 25px;
+}
+
+#display:has(> #slides > .slide) > .next {
+  position: absolute;
+  top: 37%;
+  right: 3%;
+  display: block;
+}
+
+#display:has(> #slides > .slide) > .prev {
+  position: absolute;
+  top: 37%;
+  left: 3%;
+  display: block;
+}
+
+#display > :is(.prev, .next) {
+  background-color: #00000000;
+  border: none;
+  color: var(--rp-foam);
+  display: none;
+}
+
+#display:not(:has(> #slides > .slide)) > label {
+  display: none;
+}
+
+#display:has(> #slides > .slide) > #noContentToDisplay {
+  display: none;
+}
+
+/* toggle visibility classes */
+input[type="checkbox"].visibilityToggle:checked ~ .hideOnCheck {
+  display: none;
+}
+
+input[type="checkbox"].visibilityToggle:not(:checked) ~ .hideOnUncheck {
+  display: none;
+}
+
+input[type="checkbox"].visibilityToggle {
   display: none;
 }

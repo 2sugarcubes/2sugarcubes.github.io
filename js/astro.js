@@ -22,24 +22,37 @@ window.draw_observation = function draw_observation(time, svgData) {
     "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svgData);
 
   var slide = document.createElement("img");
+  const id = `slideT=${time}`;
   slide.src = dataURL;
   slide.classList.add("slide");
+  slide.id = id;
+  if (time != startTime.value) {
+    // If it isn't the first slide hide it
+    slide.style.display = "none";
+  }
   frame.appendChild(slide);
 };
 
+let universe = document.getElementById("universe");
+let observatories = document.getElementById("observatories");
+let startTime = document.getElementById("startTime");
+let endTime = document.getElementById("endTime");
+let stepSize = document.getElementById("stepSize");
+
 window.simulate = async function simulate() {
-  const universe = document.getElementById("universe").value;
-  const observatories = document.getElementById("observatories").value;
-  const startTime = document.getElementById("startTime").value;
-  const endTime = document.getElementById("endTime").value;
-  const stepSize = document.getElementById("stepSize").value;
+  frame.textContent = "";
+  const local_universe = universe.value;
+  const local_observatories = observatories.value;
+  const local_startTime = startTime.value;
+  const local_endTime = endTime.value;
+  const local_stepSize = stepSize.value;
 
   generate_observations_from_json(
-    universe,
-    observatories,
-    BigInt(startTime),
-    BigInt(endTime),
-    stepSize,
+    local_universe,
+    local_observatories,
+    BigInt(local_startTime),
+    BigInt(local_endTime),
+    local_stepSize,
   );
 };
 
