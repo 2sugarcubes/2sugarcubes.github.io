@@ -11,12 +11,22 @@ function plusSlides(n) {
   stepSlides((slideIndex += n));
 }
 
+function getSlide(i) {
+  return document.getElementById(`slideT=${i}`);
+}
+
+function isPlaying() {
+  let playing = document.getElementById("playing");
+  console.debug(playing);
+  return playing && !playing.checked;
+}
+
 function stepSlides(n) {
   let slides = getSlides();
-  if (n > slides.length) {
+  if (n >= slides.length) {
     slideIndex = 0;
   }
-  if (n < 1) {
+  if (n < 0) {
     slideIndex = slides.length - 1;
   }
   for (let i = 0; i < slides.length; i++) {
@@ -31,8 +41,12 @@ function stepSlides(n) {
 function showSlides(n = 1) {
   let i;
   let slides = getSlides();
-
-  if (slides.length > 0) {
+  if (isPlaying()) {
+    // Break if the user has paused the playback
+    console.log("Stopping showing slides since it is not selected to play");
+    return;
+  }
+  if (slides.length >= 0) {
     slideIndex += n;
 
     for (i = 0; i < slides.length; i++) {
@@ -45,7 +59,9 @@ function showSlides(n = 1) {
       slideIndex = slides.length - 1;
     }
     slides[slideIndex].style.display = "block";
+    console.log(`Showing slide ${slideIndex}`);
   }
+
   console.debug(`Auto slide: ${slideIndex}`);
   setTimeout(showSlides, 1000);
 }
