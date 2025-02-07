@@ -9,8 +9,37 @@ title: Astrograph
     <script type="module" src="/js/astro.js" defer></script>
     <script src="/js/slideshow.js" async></script>
     <script src="/js/fileDrop.js" async></script>
+    <script>
+      function generate(seedId, starNumId) {
+        console.log(`seed id: ${seedId}\nstar num id: ${starNumId}`);
+        const seed = document.getElementById(seedId).value;
+        const starNum = document.getElementById(starNumId).value;
+        console.log(`seed: ${seed}\nnumber of stars: ${starNum}`);
+
+        const universe = generateUniverse(seed, starNum);
+        const json = JSON.stringify(universe, null, 2);
+        const jsonEscaped = json.replace(/"/g, "&quot;");
+
+        console.log(`Got JSON universe with ${universe.children.length} stars`);
+        document.getElementById("generateOutputPretty").textContent = json;
+        // Removes whitespace
+        document.getElementById("generateOutputMinimized").textContent =
+          json.replace(/\s/g, "");
+        document.getElementById("universe").value = json;
+      }
+
+      function download(id) {
+        const content = document.getElementById(id).value;
+
+        let link = document.createElement("a");
+        link.download = "universe.json";
+        link.href =
+          "data:text/json;charset=utf-8," + encodeURIComponent(content);
+        link.click();
+      }
+    </script>
     <style>
-      #settings input:not([type="file"]) {
+      .settings input:not([type="file"]) {
         background-color: var(--rp-overlay);
         box-shadow:
           inset 2px 2px 4px #1c1a2b,
@@ -20,7 +49,7 @@ title: Astrograph
         color: var(--rp-text);
       }
 
-      #settings textarea {
+      textarea {
         height: 20ex;
         background-color: var(--rp-overlay);
         box-shadow:
@@ -30,99 +59,59 @@ title: Astrograph
         width: 95%;
         color: var(--rp-text);
       }
+
+      button:not(:has(+ *)) {
+        margin-top: 20px;
+      }
+
+      .hideOnCheck {
+        overflow-x: auto;
+      }
     </style>
   </head>
   <body>
     {% include sidebar.html %}
     <article>
-      <h1>Astrograph</h1>
+      <h1>Astrograph Demo</h1>
       <p>
         You can use this tool to generate starmaps and universes within your
         created worlds.
       </p>
 
-      <main class="row">
-        <div id="settings" class="col card" style="padding: 10px">
-          <p>
-            <label for="universe"
-              >Input your <b>universe.json</b> here (or select a file).</label
-            >
-            <textarea id="universe" name="universe" value=""></textarea>
-            <input
-              type="file"
-              accept="text/json*"
-              onchange="readFile('universe', this)"
-            />
-          </p>
-          <p>
-            <label for="observatories">
-              Input your <b>observatories.json</b> here (or select a file).
-            </label>
-            <textarea
-              id="observatories"
-              name="observatories"
-              value=""
-            ></textarea>
-            <input
-              type="file"
-              accept="text/json*"
-              onchange="readFile('observatories', this)"
-            />
-          </p>
-          <p>
-            <label for="startTime"
-              >Time to start observations at, in hours since the epoch.</label
-            >
-            <input type="number" name="startTime" id="startTime" value="0" />
-          </p>
-          <p>
-            <label for="stepSize">Time between observations, in hours.</label>
-            <input type="number" name="stepSize" id="stepSize" value="1" />
-          </p>
-          <p>
-            <label for="endTime">
-              Time to stop observing at, in hours. Note: this value is
-              non-inclusive, so will not appear in outputs.
-            </label>
-            <input type="number" name="endTime" id="endTime" value="100" />
-          </p>
-          <p>
-            <button type="submit" onclick="simulate()">Simulate</button>
-          </p>
-        </div>
-        <div id="display" class="col" style="position: relative">
-          <div id="slides"></div>
-          <button id="navButtonPrev" class="prev" onclick="plusSlides(-1)">
-            &#10094;
-          </button>
-          <button class="next" onclick="plusSlides(1)">&#10095;</button>
-          <input
-            type="checkbox"
-            name="playing"
-            id="playing"
-            class="visibilityToggle"
-            onclick="showSlides(1)"
-          />
-          <label
-            for="playing"
-            class="hideOnUncheck"
-            style="text-align: center; font-size: 36px"
-          >
-            <pre class="fa-solid fa-play" style="margin-top: 10px">▶️</pre>
-          </label>
-          <label
-            for="playing"
-            class="hideOnCheck"
-            style="text-align: center; font-size: 36px"
-          >
-            <pre class="fa-solid fa-pause" style="margin-top: 10px">⏸️</pre>
-          </label>
-          <p id="noContentToDisplay" style="color: var(--rp-muted)">
-            No conetent to display yet. Observations will appear here once you
-            have set up your parameters and clicked
-            <b onclick="simulate()">Simulate</b>.
-          </p>
-        </div>
+      <p>
+        Website taking too long to run? Consider
+        <a href="https://github.com/2sugarcubes/astrograph/releases">
+          downloading the local version.
+        </a>
+        It is much faster, is and always will be free, and gives you much more
+        control over your universes.
+      </p>
+
+      <main style="position: absolute">
+        <button
+          type=""
+          style="
+            position: absolute;
+            transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            width: fit-content;
+            height: fit-content;
+            margin: 0;
+            left: 45%;
+          "
+        >
+          <label for="toggleGenerate"> Generate/Simulate </label>
+        </button>
+        <input
+          type="checkbox"
+          name="toggleGenerate"
+          id="toggleGenerate"
+          value="checked"
+          class="visibilityToggle"
+          style="display: block; visibility: hidden; margin: 15px"
+        />
+        {% include_relative _generate.html %} {% include_relative _simulate.html
+        %}
       </main>
     </article>
   </body>
