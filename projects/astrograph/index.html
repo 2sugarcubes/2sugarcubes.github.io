@@ -29,7 +29,7 @@ title: Astrograph
       }
 
       function download(id) {
-        const content = document.getElementById(id).value;
+        const content = document.getElementById(id).textContent;
 
         let link = document.createElement("a");
         link.download = "universe.json";
