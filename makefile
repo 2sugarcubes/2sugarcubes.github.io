@@ -1,5 +1,5 @@
 make:
-	@bundle install && bundle exec jekyll serve --livereload --open-url --drafts --future --incremental --baseurl=""
+	@bundle install && bundle exec jekyll serve --livereload --open-url --drafts --future --incremental --baseurl="" -H jekyll
 
 make container:
 	@wget -qO- https://github.com/2sugarcubes/astrograph/releases/download/v0.1.0/wasm.tar.gz |\
