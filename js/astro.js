@@ -2,6 +2,7 @@ import init, {
   //initThreadPool,
   generate_observations_from_json,
   generate_universe,
+  generate_universe_from_seed,
 } from "./astro/astrograph_wasm.js";
 
 async function loadJsonFile(url, callback) {
@@ -38,6 +39,14 @@ let observatories = document.getElementById("observatories");
 let startTime = document.getElementById("startTime");
 let endTime = document.getElementById("endTime");
 let stepSize = document.getElementById("stepSize");
+
+window.generateUniverse = function generateUniverse(seed, starNum) {
+  if (!seed) {
+    return generate_universe();
+  } else {
+    return generate_universe_from_seed(BigInt(seed));
+  }
+};
 
 window.simulate = async function simulate() {
   frame.textContent = "";
