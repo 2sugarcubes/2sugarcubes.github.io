@@ -153,7 +153,11 @@
 }
 
 article {
-  width: min(100%, 45em);
+  max-width: min(100%, 45em);
+}
+
+pre {
+  line-height: 1.25em;
 }
 
 :is(button, input, textarea) {
@@ -392,7 +396,7 @@ img.license {
     display: block;
   }
 
-  #display {
+  .display {
     padding: 0px;
   }
 
@@ -402,7 +406,7 @@ img.license {
   }
 }
 
-#display {
+.display {
   aspect-ratio: 1;
 }
 
@@ -415,11 +419,11 @@ div.pill {
 }
 
 /* Make display multilines have some extra room */
-.col:has(+ #display) {
+.col:has(+ .display) {
   flex: 25%;
 }
 
-.row > .col + #display {
+.row > .col + .display {
   flex: 75%;
   padding: 25px;
 }
@@ -429,41 +433,44 @@ button:is(.next, .prev) {
   box-shadow: none;
 }
 
-#display:has(> #slides > .slide) > .next {
+.display:has(> #slides > .slide) > .next {
   position: absolute;
   top: 37%;
   right: 3%;
   display: block;
 }
 
-#display:has(> #slides > .slide) > .prev {
+.display:has(> #slides > .slide) > .prev {
   position: absolute;
   top: 37%;
   left: 3%;
   display: block;
 }
 
-#display > :is(.prev, .next) {
+.display > :is(.prev, .next) {
   background-color: #00000000;
   border: none;
   color: var(--rp-foam);
   display: none;
 }
 
-#display:not(:has(> #slides > .slide)) > label {
+.display:not(:has(> #slides > .slide)) > label {
   display: none;
 }
 
-#display:has(> #slides > .slide) > #noContentToDisplay {
+.display:has(> #slides > .slide) > #noContentToDisplay {
   display: none;
 }
 
 /* toggle visibility classes */
-input[type="checkbox"].visibilityToggle:checked ~ .hideOnCheck {
+input[type="checkbox"].visibilityToggle:checked ~ .hideOnCheck,
+label:has(input[type="checkbox"].visibilityToggle:checked) ~ .hideOnCheck {
   display: none;
 }
 
-input[type="checkbox"].visibilityToggle:not(:checked) ~ .hideOnUncheck {
+input[type="checkbox"].visibilityToggle:not(:checked) ~ .hideOnUncheck,
+label:has(input[type="checkbox"].visibilityToggle:not(:checked))
+  ~ .hideOnUncheck {
   display: none;
 }
 
