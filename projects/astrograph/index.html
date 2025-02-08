@@ -1,0 +1,118 @@
+---
+title: Astrograph
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    {% include html_head.html %}
+    <script type="module" src="/js/astro.js" defer></script>
+    <script src="/js/slideshow.js" async></script>
+    <script src="/js/fileDrop.js" async></script>
+    <script>
+      function generate(seedId, starNumId) {
+        console.log(`seed id: ${seedId}\nstar num id: ${starNumId}`);
+        const seed = document.getElementById(seedId).value;
+        const starNum = document.getElementById(starNumId).value;
+        console.log(`seed: ${seed}\nnumber of stars: ${starNum}`);
+
+        const universe = generateUniverse(seed, starNum);
+        const json = JSON.stringify(universe, null, 2);
+        const jsonEscaped = json.replace(/"/g, "&quot;");
+
+        console.log(`Got JSON universe with ${universe.children.length} stars`);
+        document.getElementById("generateOutputPretty").textContent = json;
+        // Removes whitespace
+        document.getElementById("generateOutputMinimized").textContent =
+          json.replace(/\s/g, "");
+        document.getElementById("universe").value = json;
+      }
+
+      function download(id) {
+        const content = document.getElementById(id).value;
+
+        let link = document.createElement("a");
+        link.download = "universe.json";
+        link.href =
+          "data:text/json;charset=utf-8," + encodeURIComponent(content);
+        link.click();
+      }
+    </script>
+    <style>
+      .settings input:not([type="file"]) {
+        background-color: var(--rp-overlay);
+        box-shadow:
+          inset 2px 2px 4px #1c1a2b,
+          inset -2px -2px 4px #302c49;
+        border-color: var(--rp-muted);
+        width: 95%;
+        color: var(--rp-text);
+      }
+
+      textarea {
+        height: 20ex;
+        background-color: var(--rp-overlay);
+        box-shadow:
+          inset 5px 5px 10px #1c1a2b,
+          inset -5px -5px 10px #302c49;
+        border-color: var(--rp-muted);
+        width: 95%;
+        color: var(--rp-text);
+      }
+
+      button:not(:has(+ *)) {
+        margin-top: 20px;
+      }
+
+      .hideOnCheck {
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    {% include sidebar.html %}
+    <article>
+      <h1>Astrograph Demo</h1>
+      <p>
+        You can use this tool to generate starmaps and universes within your
+        created worlds.
+      </p>
+
+      <p>
+        Website taking too long to run? Consider
+        <a href="https://github.com/2sugarcubes/astrograph/releases">
+          downloading the local version.
+        </a>
+        It is much faster, is and always will be free, and gives you much more
+        control over your universes.
+      </p>
+
+      <main style="position: absolute">
+        <button
+          type=""
+          style="
+            position: absolute;
+            transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            width: fit-content;
+            height: fit-content;
+            margin: 0;
+            left: 45%;
+          "
+        >
+          <label for="toggleGenerate"> Generate/Simulate </label>
+        </button>
+        <input
+          type="checkbox"
+          name="toggleGenerate"
+          id="toggleGenerate"
+          value="checked"
+          class="visibilityToggle"
+          style="display: block; visibility: hidden; margin: 15px"
+        />
+        {% include_relative _generate.html %} {% include_relative _simulate.html
+        %}
+      </main>
+    </article>
+  </body>
+</html>

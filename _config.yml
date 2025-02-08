@@ -5,6 +5,17 @@ plugins:
   - jekyll-sitemap
   - jekyll-sass-converter
   - jekyll-relative-links
+  - jekyll-include-cache
+
+repository: 2sugarcubes/2sugarcubes.github.io
+
+exclude:
+  - vendor
+  - Dockerfile
+  - docker-compose.yml
+  - makefile
+  - readme.md
+  - js/astro/README.md
 
 markdown: kramdown
 highlighter: rouge

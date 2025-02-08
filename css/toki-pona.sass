@@ -1,0 +1,33 @@
+---
+---
+@font-face
+  font-family: "linja-pona"
+  src: url(/assets/linja-pona-4.9.otf)
+
+// Unset fonts from style.css
+p, h1, h2, h3, h4, h5, h6, div
+  font-family: unset
+
+// toggle linja pona for text
+
+main[lang|="tok"] > article
+  font-family: sans-serif
+
+aside:has(> #sitelen-pona:checked) ~ article :lang("tok")
+  font-family: "linja-pona"
+
+// Ignore ligatures for english text
+article > [lang|="en"]
+  font-family: sans-serif
+
+// Force latin text for preformatted text
+p.linja-latin
+  font-family: sans-serif
+
+
+// Hide english if toki pona taso
+[lang|="en"]
+  visibility: visible
+
+aside:has(> #toki-pona-taso:checked) ~ article [lang|="en"]
+  visibility: hidden

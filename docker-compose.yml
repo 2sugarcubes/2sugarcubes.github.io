@@ -1,0 +1,14 @@
+services:
+  jekyll:
+    build: .
+    container_name: jekyll
+    restart: always
+    tty: true
+    volumes:
+      - ./:/srv/website
+    ports:
+      - "4000:4000"
+      - "35729:35729"
+networks:
+  my-network:
+    driver: bridge
