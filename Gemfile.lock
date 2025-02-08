@@ -304,6 +304,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll-feed (~> 0.6)
+  jekyll-include-cache
   jekyll-relative-links
   jekyll-sass-converter
   jekyll-seo-tag
