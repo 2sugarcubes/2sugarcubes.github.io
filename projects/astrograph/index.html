@@ -33,8 +33,9 @@ title: Astrograph
 
         let link = document.createElement("a");
         link.download = "universe.json";
+        console.log("Attempting to download");
         link.href =
-          "data:text/json;charset=utf-8," + encodeURIComponent(content);
+          "data:text/plaintext;charset=utf-8," + encodeURIComponent(content);
         link.click();
       }
     </script>
