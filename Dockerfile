@@ -96,4 +96,5 @@ RUN rm -rf /root/src /tmp/* /usr/share/man /var/cache/apk/* \
 EXPOSE 4000
 EXPOSE 35729
 
-ENTRYPOINT [ "make", "container" ]
+ENTRYPOINT [ "make" ]
+#ENTRYPOINT [ "make", "container" ]

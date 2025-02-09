@@ -5,6 +5,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-sass-converter
   - jekyll-relative-links
+  - jekyll-include-cache
 
 repository: 2sugarcubes/2sugarcubes.github.io
 
